@@ -1,12 +1,11 @@
-------H?r regionda yerl???n ölk?l?rin say?n? ç?xaran SQL yaz?n. N?tic?d? iki sütun olacaq: region_id, count_country.
+------H?r regionda yerl???n ï¿½lk?l?rin say?n? ï¿½?xaran SQL yaz?n. N?tic?d? iki sï¿½tun olacaq: region_id, count_country.
 select
 region_id,
-
 count(*) as count_country
 from countries
-group by region_id;
+group by region_id
 
----- Employees c?dv?lind? h?r department_id üzr?, commission_pct sütunlar?n?n null olan v? null olmayan s?tirl?rin saylar?n? ç?xaran sql yaz?n. N?tic?d? üç sütun olacaq: department_id, null_count,
+---- Employees c?dv?lind? h?r department_id ï¿½zr?, commission_pct sï¿½tunlar?n?n null olan v? null olmayan s?tirl?rin saylar?n? ï¿½?xaran sql yaz?n. N?tic?d? ï¿½ï¿½ sï¿½tun olacaq: department_id, null_count,
 --notnull_count
 select
 department_id,
@@ -15,27 +14,27 @@ count(case when commission_pct  is not null then 1 end ) as notnull_count
 from employees
 group by department_id;
 
-----Department_id-si 90 olan i?çil?rin maa? c?mini tapan sor?u yaz?n .
+----Department_id-si 90 olan i?ï¿½il?rin maa? c?mini tapan sor?u yaz?n .
 SELECT
 SUM(salary) 
 FROM employees
 WHERE department_id = 90;
 
 
----.Ad? A h?rfi il? ba?layan i?çil?rin maa? ortalamas?n? tapan sor?u yaz?n.
+---.Ad? A h?rfi il? ba?layan i?ï¿½il?rin maa? ortalamas?n? tapan sor?u yaz?n.
 select
  AVG(SALARY) as SALARY
 FROM EMPLOYEES 
 WHERE upper(FIRST_NAME) LIKE 'A%';
 
-----.H?r bir department-d? neç? i?çi oldu?unu tapan sor?u yaz?n. N?tic?d? 2 sütun olsun
+----.H?r bir department-d? neï¿½? i?ï¿½i oldu?unu tapan sor?u yaz?n. N?tic?d? 2 sï¿½tun olsun
 select
 department_id, 
 count(*) as employee_count
 from employees
 group by department_id;
 
----Departments c?dv?lind?n manager_id sütununda null olan s?tirl?rin say?n? tap?n
+---Departments c?dv?lind?n manager_id sï¿½tununda null olan s?tirl?rin say?n? tap?n
 select
 count(*) 
 from departments
@@ -46,7 +45,7 @@ select
 max (location_id) 
 from locations;
 
------ H?r bir country_id üzr? street_address say?n? tapan sor?u yaz?n.
+----- H?r bir country_id ï¿½zr? street_address say?n? tapan sor?u yaz?n.
 select country_id,
 count(street_address) 
 from locations
